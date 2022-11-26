@@ -1,0 +1,40 @@
+CREATE TABLE clothing (id INTEGER NOT NULL PRIMARY KEY, product_id INTEGER, name TEXT, size INTEGER, quantity INTEGER, price_usd NUMERIC, sale TEXT);
+
+INSERT INTO clothing(id, product_id, name, size, quantity, price_usd, sale)
+VALUES
+	(1, 13854, "Dress A", 3, 260, 1698.00, "N"),
+	(2, 13554, "Dress A", 2, 86, 1698.00, "N"),
+	(3, 13554, "Dress A", 1, 56, 1698.00, "N"),
+	(4, 13555, "Dress B", 3, 248, 1880.00, "N"),
+	(5, 13555, "Dress B", 2, 124, 1880.00, "N"),
+	(6, 13555, "Dress B", 1, 88, 1880.00, "N"),
+	(7, 13556, "Dress C", 3, 148, 990.00, "Y"),
+	(8, 13556, "Dress C", 2, 36, 990.00, "Y"),
+	(9, 13556, "Dress C", 1, 25, 990.00, "Y"),
+	(10, 13557, "Dress D", 3, 160, 1240.00, "N"),
+	(11, 13557, "Dress D", 2, 80, 1240.00, "N"),
+	(12, 13557, "Dress D", 1, 50, 1240.00, "N"),
+	(13, 13558, "Dress E", 3, 201, 880.00, "Y"),
+	(14, 13558, "Dress E", 2, 340, 880.00, "Y"),
+	(15, 13558, "Dress E", 1, 54, 880.00, "Y"),
+	(16, 13559, "Dress F", 3, 50, 550.00, "Y"),
+	(17, 13559, "Dress F", 2, 10, 550.00, "Y"),
+	(18, 13559, "Dress F", 1, 5, 550.00, "Y");
+
+--What items have less than 100 in qty and may need to be reordered, arranged by product_id?
+
+SELECT * 
+FROM clothing 
+WHERE quantity <100
+AND sale= "N"
+ORDER BY product_id;
+
+--What products would be in a Sale Category? 
+SELECT *
+FROM clothing
+WHERE sale = "Y";
+
+--How much would cost one of each size 3 item? 
+SELECT ROUND(AVG(price_usd),2) AS avg_price_size_3
+FROM clothing
+WHERE size = 3
