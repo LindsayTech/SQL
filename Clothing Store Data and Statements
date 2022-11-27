@@ -22,7 +22,6 @@ VALUES
 	(18, 13559, "Dress F", 1, 5, 550.00, "Y");
 
 --What items have less than 100 in qty and may need to be reordered, arranged by product_id?
-
 SELECT * 
 FROM clothing 
 WHERE quantity <100
@@ -34,7 +33,7 @@ SELECT *
 FROM clothing
 WHERE sale = "Y";
 
---How much would cost one of each size 3 item? 
+--How much would one of each item in size 3 cost? 
 SELECT ROUND(AVG(price_usd),2) AS avg_price_size_3
 FROM clothing
 WHERE size = 3
