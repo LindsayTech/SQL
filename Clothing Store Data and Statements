@@ -2,7 +2,7 @@ CREATE TABLE clothing (id INTEGER NOT NULL PRIMARY KEY, product_id INTEGER, name
 
 INSERT INTO clothing(id, product_id, name, size, quantity, price_usd, sale)
 VALUES
-	(1, 13854, "Dress A", 3, 260, 1698.00, "N"),
+	(1, 13554, "Dress A", 3, 260, 1698.00, "N"),
 	(2, 13554, "Dress A", 2, 86, 1698.00, "N"),
 	(3, 13554, "Dress A", 1, 56, 1698.00, "N"),
 	(4, 13555, "Dress B", 3, 248, 1880.00, "N"),
